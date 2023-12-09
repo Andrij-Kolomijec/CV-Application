@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from "react";
+import "./Styles/App.css";
+import initialCV from "./Components/initialCV.jsx";
+import Header from "./Components/header.jsx";
+import Experience from "./Components/experience.jsx";
+import Education from "./Components/education.jsx";
+import Languages from "./Components/languages.jsx";
+import Skills from "./Components/skills.jsx";
+import InputHeader from "./Components/inputHeader.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <InputHeader headerInputs={initialCV.header} />
+      <Header header={initialCV.header} />
+      <Experience experience={initialCV.experience} />
+      <Education education={initialCV.education} />
+      <Languages languages={initialCV.languages} />
+      <Skills skills={initialCV.skills} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
