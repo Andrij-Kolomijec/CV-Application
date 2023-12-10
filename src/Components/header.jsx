@@ -1,16 +1,14 @@
-// import { useState } from "react";
-
-export default function Header({ header }) {
+export default function Header({ props }) {
   return (
     <div className="header">
       <h1>
-        {header.firstName} {header.lastName}
+        {props.header.firstName} {props.header.lastName}
       </h1>
-      <h3>{header.street}</h3>
-      <h3>{header.city}</h3>
-      <h3>{header.phone}</h3>
-      <h3>{header.email}</h3>
-      <h3>{header.dateOfBirth}</h3>
+      <h3>{props.header.address}</h3>
+      <h3>{props.header.city}</h3>
+      <h3>{props.header.phone}</h3>
+      <h3>{props.header.email}</h3>
+      <h3>{props.header.dateOfBirth}</h3>
       <hr />
     </div>
   );

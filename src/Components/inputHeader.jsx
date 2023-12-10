@@ -1,66 +1,56 @@
-import { useState } from "react";
-
-export default function InputHeader({ headerInputs }) {
-  const [firstName, setFirstName] = useState(headerInputs.firstName);
-  const [lastName, setLastName] = useState(headerInputs.lastName);
-  const [street, setAddress] = useState(headerInputs.street);
-  const [city, setCity] = useState(headerInputs.city);
-  const [phone, setPhone] = useState(headerInputs.phone);
-  const [email, setEmail] = useState(headerInputs.email);
-  const [dateOfBirth, setDateOfBirth] = useState(headerInputs.dateOfBirth);
-
+export default function InputHeader({ CV, onChange }) {
   return (
-    <div>
+    <form className="header">
+      <h3>General information</h3>
       <input
         type="text"
         placeholder="First name"
-        value={firstName}
-        onChange={(event) => setFirstName(event.target.value)}
+        name="firstName"
+        value={CV.header.firstName}
+        onChange={onChange}
       />
       <input
         type="text"
         placeholder="Last name"
-        value={lastName}
-        onChange={(event) => setLastName(event.target.value)}
+        name="lastName"
+        value={CV.header.lastName}
+        onChange={onChange}
       />
       <input
         type="text"
         placeholder="Address"
-        value={street}
-        onChange={(event) => setAddress(event.target.value)}
+        name="address"
+        value={CV.header.address}
+        onChange={onChange}
       />
       <input
         type="text"
         placeholder="City"
-        value={city}
-        onChange={(event) => setCity(event.target.value)}
+        name="city"
+        value={CV.header.city}
+        onChange={onChange}
       />
       <input
         type="text"
         placeholder="Phone"
-        value={phone}
-        onChange={(event) => setPhone(event.target.value)}
+        name="phone"
+        value={CV.header.phone}
+        onChange={onChange}
       />
       <input
         type="text"
         placeholder="Email"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
+        name="email"
+        value={CV.header.email}
+        onChange={onChange}
       />
       <input
         type="text"
         placeholder="Date of birth"
-        value={dateOfBirth}
-        onChange={(event) => setDateOfBirth(event.target.value)}
+        name="dateOfBirth"
+        value={CV.header.dateOfBirth}
+        onChange={onChange}
       />
-      <h1>
-        {firstName} {lastName}
-      </h1>
-      <h3>{street}</h3>
-      <h3>{city}</h3>
-      <h3>{phone}</h3>
-      <h3>{email}</h3>
-      <h3>{dateOfBirth}</h3>
-    </div>
+    </form>
   );
 }
