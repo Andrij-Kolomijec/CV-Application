@@ -4,4 +4,4 @@
 
 [:arrow_forward: visit here](https://andrij-kolomijec.github.io/CV-Application/)
 
-topics: React
+topics: React, Vite

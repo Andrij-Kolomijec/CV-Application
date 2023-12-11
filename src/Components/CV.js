@@ -3,11 +3,11 @@ import { v4 as uuidv4 } from "uuid";
 const CV = {
   header: {
     firstName: "John",
-    lastName: "Dow",
+    lastName: "Public",
     address: "Random Street 124",
     city: "City 35678",
     phone: "123 456 789",
-    email: "john.dow@gmail.com",
+    email: "john.public@gmail.com",
     dateOfBirth: "31.2.1985",
   },
   experience: [
@@ -47,14 +47,21 @@ const CV = {
   ],
 
   skills: [
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "Python",
-    "Webpack",
-    "React",
-    "Node.js",
-    "Angular",
+    {
+      skill: "Programming",
+      description: "JavaScript, CSS, Python , Webpack, React, Node.js, Angular",
+      id: uuidv4(),
+    },
+    {
+      skill: "Driving licence",
+      description: "A, B, C, D1",
+      id: uuidv4(),
+    },
+    {
+      skill: "Management",
+      description: "Watching over people",
+      id: uuidv4(),
+    },
   ],
 };
 
