@@ -1,6 +1,6 @@
 export default function Languages({ props }) {
   const listLanguages = props.languages.map((language) => (
-    <li key={language.language}>
+    <li key={language.id}>
       <b>{language.language}</b> - {language.level}
     </li>
   ));

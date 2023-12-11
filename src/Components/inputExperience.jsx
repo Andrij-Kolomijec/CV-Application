@@ -29,7 +29,12 @@ export default function InputExperience({
           value={employer.position}
           onChange={(e) => onChange(e, key, "experience")}
         />
-        <button onClick={() => onDeleteClick(key, "experience")}>Delete</button>
+        <button
+          className="deleteButton"
+          onClick={(e) => onDeleteClick(e, key, "experience")}
+        >
+          Delete
+        </button>
       </div>
     );
   });
@@ -39,8 +44,13 @@ export default function InputExperience({
       <form className="experience">
         <h3>Experience</h3>
         {listEmployers}
+        <button
+          className="addButton"
+          onClick={(e) => onAddClick(e, "experience")}
+        >
+          Add
+        </button>
       </form>
-      <button onClick={() => onAddClick("experience")}>Add</button>
     </>
   );
 }

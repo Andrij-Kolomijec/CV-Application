@@ -6,11 +6,13 @@ import Header from "./Components/header.jsx";
 import Experience from "./Components/experience.jsx";
 import Education from "./Components/education.jsx";
 import Languages from "./Components/languages.jsx";
-// import Skills from "./Components/skills.jsx";
+import Skills from "./Components/skills.jsx";
 import InputHeader from "./Components/inputHeader.jsx";
 import InputExperience from "./Components/inputExperience.jsx";
 import InputEducation from "./Components/inputEducation.jsx";
 import InputLanguages from "./Components/inputLanguages.jsx";
+import InputSkills from "./Components/inputSkills.jsx";
+import DownloadCV from "./Components/downloadCV.jsx";
 
 function App() {
   const [CV, setCV] = useState(initialCV);
@@ -37,7 +39,8 @@ function App() {
     console.log(CV);
   }
 
-  function handleAdd(section) {
+  function handleAdd(e, section) {
+    e.preventDefault();
     setCV((prevCV) => ({
       ...prevCV,
       [section]: [
@@ -62,12 +65,17 @@ function App() {
                   level: "",
                   id: uuidv4(),
                 }
-              : "shit",
+              : {
+                  skill: "",
+                  description: "",
+                  id: uuidv4(),
+                },
       ],
     }));
   }
 
-  function handleDelete(keyToDelete, section) {
+  function handleDelete(e, keyToDelete, section) {
+    e.preventDefault();
     setCV((prevCV) => ({
       ...prevCV,
       [section]: prevCV[section].filter((item) => item.id !== keyToDelete),
@@ -76,6 +84,7 @@ function App() {
 
   return (
     <>
+      <DownloadCV props={CV} />
       <div className="inputs">
         <InputHeader CV={CV} onChange={handleHeaderChange} />
         <InputExperience
@@ -96,13 +105,19 @@ function App() {
           onAddClick={handleAdd}
           onDeleteClick={handleDelete}
         />
+        <InputSkills
+          CV={CV}
+          onChange={handleChange}
+          onAddClick={handleAdd}
+          onDeleteClick={handleDelete}
+        />
       </div>
-
       <div className="cv">
         <Header props={CV} />
         <Experience props={CV} />
         <Education props={CV} />
         <Languages props={CV} />
+        <Skills props={CV} />
       </div>
     </>
   );

@@ -1,11 +1,13 @@
-// import { useState } from "react";
-
-export default function Skills({ skills }) {
-  const listSkills = skills.stack.map((skill) => <li key={skill}>{skill}</li>);
+export default function Skills({ props }) {
+  const listSkills = props.skills.map((skill) => (
+    <li key={skill.id}>
+      <b>{skill.skill}</b> - {skill.description}
+    </li>
+  ));
 
   return (
     <div>
-      <h2>{skills.id}</h2>
+      <h2>Skills</h2>
       <ul>{listSkills}</ul>
     </div>
   );

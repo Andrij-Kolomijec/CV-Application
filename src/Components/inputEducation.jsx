@@ -29,7 +29,12 @@ export default function InputEducation({
           value={school.focus}
           onChange={(e) => onChange(e, key, "education")}
         />
-        <button onClick={() => onDeleteClick(key, "education")}>Delete</button>
+        <button
+          className="deleteButton"
+          onClick={(e) => onDeleteClick(e, key, "education")}
+        >
+          Delete
+        </button>
       </div>
     );
   });
@@ -39,8 +44,13 @@ export default function InputEducation({
       <form className="education">
         <h3>Education</h3>
         {listSchools}
+        <button
+          className="addButton"
+          onClick={(e) => onAddClick(e, "education")}
+        >
+          Add
+        </button>
       </form>
-      <button onClick={() => onAddClick("education")}>Add</button>
     </>
   );
 }

@@ -22,7 +22,12 @@ export default function InputLanguages({
           value={language.level}
           onChange={(e) => onChange(e, key, "languages")}
         />
-        <button onClick={() => onDeleteClick(key, "languages")}>Delete</button>
+        <button
+          className="deleteButton"
+          onClick={(e) => onDeleteClick(e, key, "languages")}
+        >
+          Delete
+        </button>
       </div>
     );
   });
@@ -32,8 +37,13 @@ export default function InputLanguages({
       <form className="languages">
         <h3>Languages</h3>
         {listLanguages}
+        <button
+          className="addButton"
+          onClick={(e) => onAddClick(e, "languages")}
+        >
+          Add
+        </button>
       </form>
-      <button onClick={() => onAddClick("languages")}>Add</button>
     </>
   );
 }
