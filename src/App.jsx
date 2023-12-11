@@ -13,6 +13,7 @@ import InputEducation from "./Components/inputEducation.jsx";
 import InputLanguages from "./Components/inputLanguages.jsx";
 import InputSkills from "./Components/inputSkills.jsx";
 import DownloadCV from "./Components/downloadCV.jsx";
+import Icon from "./Components/icon.jsx";
 
 function App() {
   const [CV, setCV] = useState(initialCV);
@@ -84,6 +85,7 @@ function App() {
 
   return (
     <>
+      <Icon />
       <DownloadCV props={CV} />
       <div className="inputs">
         <InputHeader CV={CV} onChange={handleHeaderChange} />

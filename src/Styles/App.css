@@ -20,6 +20,23 @@ body {
   margin-top: 60px;
 }
 
+.icon {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  transition: transform 1.4s ease-in-out;
+}
+
+.icon:hover {
+  transform: rotate(720deg) scale(1.3);
+}
+
+.icon img {
+  height: 50px;
+  filter: invert(16%) sepia(43%) saturate(4338%) hue-rotate(32deg)
+    brightness(94%) contrast(101%);
+}
+
 .download-button {
   position: fixed;
   top: 20px;
@@ -106,3 +123,5 @@ button:hover {
 ul {
   list-style: none;
 }
+
+/* @media */
