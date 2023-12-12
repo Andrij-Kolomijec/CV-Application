@@ -124,22 +124,6 @@ input:focus {
   flex-wrap: wrap;
 }
 
-button {
-  font-weight: bold;
-  background-color: rgb(194, 194, 194);
-}
-
-button:hover {
-  background-color: rgb(100, 50, 0);
-  color: rgb(194, 194, 194);
-  cursor: pointer;
-}
-
-.inputs button {
-  width: 60px;
-  border-radius: 20px;
-}
-
 .header > input {
   width: 50%;
 }
@@ -168,6 +152,12 @@ ul {
 
   input {
     min-height: 20px;
+    width: 90%;
+  }
+
+  .header > input {
+    width: 90%;
+    margin-right: 10px;
   }
 
   .inputs > form {
