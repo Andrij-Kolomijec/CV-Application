@@ -166,6 +166,14 @@ ul {
     justify-content: center;
   }
 
+  input {
+    min-height: 20px;
+  }
+
+  .inputs > form {
+    gap: 20px;
+  }
+
   .icon-github,
   .icon-linkedin {
     position: static;
