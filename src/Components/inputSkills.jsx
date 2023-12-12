@@ -1,3 +1,37 @@
+import { useState } from "react";
+
+function ItemEntry({ item, onChange, onDeleteClick }) {
+  const [hover, setHover] = useState(false);
+  const key = item.id;
+  return (
+    <div key={key}>
+      <input
+        type="text"
+        placeholder="Skill"
+        name="skill"
+        value={item.skill}
+        onChange={(e) => onChange(e, key, "skills")}
+      />
+      <input
+        type="text"
+        placeholder="Description"
+        name="description"
+        value={item.description}
+        onChange={(e) => onChange(e, key, "skills")}
+      />
+      <img
+        onClick={(e) => onDeleteClick(e, key, "skills")}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        title="Delete item"
+        className="icon-delete"
+        src={hover ? "/delete-empty.svg" : "/delete.svg"}
+        alt="Delete Icon"
+      />
+    </div>
+  );
+}
+
 export default function InputSkills({
   CV,
   onChange,
@@ -5,41 +39,27 @@ export default function InputSkills({
   onAddClick,
 }) {
   const listSkills = CV.skills.map((skill) => {
-    const key = skill.id;
     return (
-      <div key={key}>
-        <input
-          type="text"
-          placeholder="Skill"
-          name="skill"
-          value={skill.skill}
-          onChange={(e) => onChange(e, key, "skills")}
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          name="description"
-          value={skill.description}
-          onChange={(e) => onChange(e, key, "skills")}
-        />
-        <button
-          className="deleteButton"
-          onClick={(e) => onDeleteClick(e, key, "skills")}
-        >
-          Delete
-        </button>
-      </div>
+      <ItemEntry
+        key={skill.id}
+        item={skill}
+        onChange={onChange}
+        onDeleteClick={onDeleteClick}
+      />
     );
   });
-
   return (
     <>
       <form className="skills">
         <h3>Skills</h3>
         {listSkills}
-        <button className="addButton" onClick={(e) => onAddClick(e, "skills")}>
-          Add
-        </button>
+        <img
+          onClick={(e) => onAddClick(e, "skills")}
+          title="Add new"
+          className="icon-add"
+          src="/plus.svg"
+          alt="Add Icon"
+        />
       </form>
     </>
   );

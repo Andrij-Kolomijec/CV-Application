@@ -16,8 +16,12 @@ export default function DownloadCV({ props }) {
   };
 
   return (
-    <button onClick={generatePDF} className="download-button">
-      <div>Download as PDF</div>
-    </button>
+    <img
+      title="Download as black & white PDF"
+      onClick={generatePDF}
+      className="icon-download"
+      src="/file-download.svg"
+      alt="Download Icon"
+    />
   );
 }

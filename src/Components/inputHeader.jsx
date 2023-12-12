@@ -2,7 +2,6 @@ export default function InputHeader({ CV, onChange }) {
   return (
     <form className="header">
       <h3>General information</h3>
-      {/* <label htmlFor="firstName">First name</label> */}
       <input
         type="text"
         placeholder="First name"
@@ -11,7 +10,6 @@ export default function InputHeader({ CV, onChange }) {
         value={CV.header.firstName}
         onChange={onChange}
       />
-      {/* <label htmlFor="lastName">Last name</label> */}
       <input
         type="text"
         placeholder="Last name"
@@ -20,7 +18,6 @@ export default function InputHeader({ CV, onChange }) {
         value={CV.header.lastName}
         onChange={onChange}
       />
-      {/* <label htmlFor="address">Address</label> */}
       <input
         type="text"
         placeholder="Address"
@@ -29,7 +26,6 @@ export default function InputHeader({ CV, onChange }) {
         value={CV.header.address}
         onChange={onChange}
       />
-      {/* <label htmlFor="city">City</label> */}
       <input
         type="text"
         placeholder="City"
@@ -38,7 +34,6 @@ export default function InputHeader({ CV, onChange }) {
         value={CV.header.city}
         onChange={onChange}
       />
-      {/* <label htmlFor="phone">Phone number</label> */}
       <input
         type="text"
         placeholder="Phone"
@@ -47,7 +42,6 @@ export default function InputHeader({ CV, onChange }) {
         value={CV.header.phone}
         onChange={onChange}
       />
-      {/* <label htmlFor="email">E-mail</label> */}
       <input
         type="text"
         placeholder="Email"
@@ -56,7 +50,6 @@ export default function InputHeader({ CV, onChange }) {
         value={CV.header.email}
         onChange={onChange}
       />
-      {/* <label htmlFor="dob">Date of birth</label> */}
       <input
         type="text"
         placeholder="Date of birth"
