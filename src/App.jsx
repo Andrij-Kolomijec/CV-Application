@@ -37,7 +37,6 @@ function App() {
         return item.id === key ? { ...item, [name]: value } : item;
       }),
     }));
-    console.log(CV);
   }
 
   function handleAdd(e, section) {
